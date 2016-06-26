@@ -1,5 +1,6 @@
 <% if @page %>
   <p><%= @page.id %></p>
+  <p><%= emojify(params[:emoji]) %>
 <% else %>
   <p>Page not valid</p>
 <% end %>
