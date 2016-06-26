@@ -84,7 +84,8 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     pkg-config (1.1.7)
-    puma (3.4.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (2.0.0.rc1)
       json
     rack-test (0.6.3)
@@ -165,7 +166,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mysql2
-  puma (~> 3.0)
+  quiet_assets
   rails (>= 5.0.0.rc2, < 5.1)
   sass-rails (~> 5.0)
   spring
