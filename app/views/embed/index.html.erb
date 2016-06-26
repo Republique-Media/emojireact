@@ -1,6 +1,8 @@
-<% if @page %>
-  <p><%= @page.id %></p>
-  <p><%= emojify(params[:emoji]) %>
+<% if @page && @emoji %>
+  <%= link_to embed_path(url: @page.url, emoji: @emoji.name, vote: true) do %>
+    <%= image_tag "emoji/#{@emoji.image_filename}", style: "vertical-align:middle", width: 25, height: 25 %>
+    <%= @page.reactions.where(emoji: @emoji.name).count %>
+  <% end %>
 <% else %>
   <p>Page not valid</p>
 <% end %>
