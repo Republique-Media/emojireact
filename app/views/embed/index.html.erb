@@ -1,8 +1,39 @@
-<% if @page && @emoji %>
-  <%= link_to embed_path(url: @page.url, emoji: @emoji.name, vote: true) do %>
-    <%= image_tag "emoji/#{@emoji.image_filename}", style: "vertical-align:middle", width: 25, height: 25 %>
-    <%= @page.reactions.where(emoji: @emoji.name).count %>
-  <% end %>
-<% else %>
-  <p>Page not valid</p>
+<!-- Inline stylings because YOLO -->
+<style>
+  body {
+    margin: 0;
+  }
+
+  a.emoji_react_link {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    background: #fff;
+    border: 1px solid #828282;
+    border-radius: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+    line-height: 1.4375rem;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  a.emoji_react_link span {
+    font-size: 11px;
+    font-family: helvetica,arial;
+    padding: 0 3px 0 3px;
+    color: #828282;
+  }
+</style>
+
+<% vote_add    = embed_path(url: @page.url, emoji: @emoji.name, vote: "add") %>
+<% vote_remove = embed_path(url: @page.url, emoji: @emoji.name, vote: "remove") %>
+
+<%= link_to (@reactions_by_ip_for_emoji.count == 0 ? vote_add : vote_remove), class: "emoji_react_link", disabled: true do %>
+  <%= image_tag "/images/emoji/#{@emoji.image_filename}", style: "vertical-align:middle", width: 20, height: 20 %>
+  <span><%= @page.reactions.where(emoji: @emoji.name).count %></span>
 <% end %>

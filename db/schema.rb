@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 20160626191044) do
   create_table "reactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "page_id"
     t.string   "emoji"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "ip_address"
+    t.text     "referrer",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.index ["page_id"], name: "index_reactions_on_page_id", using: :btree
   end
 
