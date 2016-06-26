@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title Emoji React
+    = csrf_meta_tags
+
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
+    %meta{name: "description", content: "Add Emoji reactions to your web site"}
+
+    = favicon_link_tag "/images/emoji/unicode/1f525.png"
+
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+
+  %body
+    = yield

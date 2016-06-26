@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '>= 5.0.0.rc2', '< 5.1'
 
 gem 'mysql2'
@@ -28,6 +27,8 @@ gem 'jbuilder', '~> 2.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem "haml"
 
 gem "gemoji"
 

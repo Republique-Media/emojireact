@@ -1,0 +1,8 @@
+- if @emoji
+  - vote_add    = embed_path(url: @page.url, emoji: @emoji.name, vote: "add")
+  - vote_remove = embed_path(url: @page.url, emoji: @emoji.name, vote: "remove")
+  - reactions   = @page.reactions.where(ip_address: request.ip, emoji: @emoji.name)
+
+  = link_to (reactions.count == 0 ? vote_add : vote_remove), class: "emoji_react_link", disabled: true do
+    = image_tag "/images/emoji/#{@emoji.image_filename}", style: "vertical-align:middle", width: 20, height: 20
+    %span= @page.reactions.where(emoji: @emoji.name).count

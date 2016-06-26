@@ -1,3 +1,61 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+input {
+  width: 100%;
+  padding: 0.6em 0.8em;
+  font-size: 14px;
+}
+
+input, textarea {
+  border: solid 1px #7e8084;
+  border-radius: 2px;
+  -webkit-appearance: none;
+}
+
+section.page {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+}
+
+.details, form {
+  margin-top: 50px;
+}
+
+pre {
+  display: block;
+  overflow: auto;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333;
+  border-radius: 4px;
+  background-color: #313131;
+  border: 2px solid #000;
+  color: #fefefe;
+}
+
+h1 {
+  margin-bottom: 30px;
+}

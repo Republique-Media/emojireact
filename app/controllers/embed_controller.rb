@@ -8,18 +8,26 @@ class EmbedController < ApplicationController
       @page = Page.create(url: params[:url])
     end
 
-    @emoji = Emoji.find_by_alias(params[:emoji])
+    if @page
+      #
+      # single emojis
+      if params[:emoji]
+        @emoji = Emoji.find_by_alias(params[:emoji])
+        begin
+          if params[:vote] == "add"
+            @page.reactions.create emoji: @emoji.name, ip_address: request.ip, referrer: request.referrer
 
-    if @page && @emoji
-      @reactions_by_ip = @page.reactions.where(ip_address: request.ip)
-      @reactions_by_ip_for_emoji = @page.reactions.where(ip_address: request.ip, emoji: @emoji.name)
+            redirect_back(fallback_location: embed_path(url: @page.url, emoji: @emoji.name)) and return
+          elsif params[:vote] == "remove"
+            @page.reactions.where(emoji: @emoji.name, ip_address: request.ip).first.try(:destroy)
 
-      if params[:vote] == "add"
-        @page.reactions.create emoji: @emoji.name, ip_address: request.ip, referrer: request.referrer
-      elsif params[:vote] == "remove"
-        @page.reactions.where(emoji: @emoji.name, ip_address: request.ip).first.try(:destroy)
+            redirect_back(fallback_location: embed_path(url: @page.url, emoji: @emoji.name)) and return
+          end
+        rescue # if an emoji doesn't exist
+          render nothing: true
+        end
       end
-      render layout: false
+      render layout: "iframe"
     else
       render nothing: true
     end

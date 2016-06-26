@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %title Emoji React
+    = csrf_meta_tags
+
+    / Inline stylings because YOLO
+    :css
+      body {
+        margin: 0;
+      }
+
+      a.emoji_react_link {
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        background: #fff;
+        border: 1px solid #828282;
+        border-radius: 5px;
+        padding: 2px 5px;
+        cursor: pointer;
+        line-height: 1.4375rem;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      a.emoji_react_link span {
+        font-size: 11px;
+        font-family: helvetica,arial;
+        padding: 0 3px 0 3px;
+        color: #828282;
+      }
+  %body
+    = yield
