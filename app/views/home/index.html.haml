@@ -7,7 +7,7 @@
   %h3 Inspired by Slack & Facebook reactions.
 
   = form_tag root_path, method: :get do
-    %p= text_field_tag "emojis", params[:emojis], placeholder: "Enter a comma separated list of emojis", class: "wdt-emoji-bundle-enabled"
+    %p= text_field_tag "emojis", params[:emojis], placeholder: "Enter a comma separated list of emojis. e.g. :tada:, :fire:", class: "wdt-emoji-bundle-enabled"
 
     %p= submit_tag "Generate"
 
