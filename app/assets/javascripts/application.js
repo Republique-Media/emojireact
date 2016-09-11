@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require emoji.min
+//= require wdt-emoji-bundle.min
+//= require home
 //= require_tree .

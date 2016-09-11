@@ -1,0 +1,5 @@
+- begin
+  - @emoji = Emoji.find_by_alias(emoji)
+  = render "embed/link"
+- rescue # rescue if an emoji doesn't exist
+  %p{style: "display:none"} Emoji '#{emoji}' doesn't exist

@@ -1,0 +1,5 @@
+<% if parse_emojis(params[:emojis]) %>
+<script type="text/javascript">
+  document.write('<iframe src="/embed?emojis=<%= parse_emojis(params[:emojis]) %>&url=emojireact.com" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:<%= parse_emojis(params[:emojis]).split(",").count * 55 %>px; height:35px;" allowtransparency="true" ></iframe>');
+</script>
+<% end %>
