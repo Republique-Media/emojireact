@@ -5,6 +5,6 @@
   - add_remove      = reactions.count == 0 ? "add" : "remove"
   - add_remove_link = reactions.count == 0 ? vote_add : vote_remove
 
-  = link_to add_remove_link, class: "emoji_react_link #{add_remove}", disabled: true do
+  = link_to add_remove_link, class: "emoji_react_link #{add_remove}" do
     = image_tag "/images/emoji/#{@emoji.image_filename}", style: "vertical-align:middle", width: 20, height: 20
     %span= @page.reactions.where(emoji: @emoji.name).count
