@@ -13,9 +13,12 @@ class EmbedController < ApplicationController
       # single emojis
       if params[:emoji]
         @emoji = Emoji.find_by_alias(params[:emoji])
+        @reactions = @page.reactions.where(ip_address: request.ip, emoji: @emoji.name)
         begin
           if params[:vote] == "add"
-            @page.reactions.create emoji: @emoji.name, ip_address: request.ip, referrer: request.referrer
+            unless @reactions.present?
+              @page.reactions.create emoji: @emoji.name, ip_address: request.ip, referrer: request.referrer
+            end
 
             redirect_back(fallback_location: embed_path(url: @page.url, emoji: @emoji.name)) and return
           elsif params[:vote] == "remove"
