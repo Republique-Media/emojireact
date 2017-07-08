@@ -11,6 +11,8 @@ gem "haml"
 gem "gemoji"
 gem "unicorn"
 
+gem "sentry-raven"
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -21,5 +23,4 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "mina"
-  gem "mina-unicorn", require: false
 end
