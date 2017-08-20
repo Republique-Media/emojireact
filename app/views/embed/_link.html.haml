@@ -1,7 +1,7 @@
 - if @emoji
   - vote_add        = embed_path(url: @page.url, emoji: @emoji.name, vote: "add")
   - vote_remove     = embed_path(url: @page.url, emoji: @emoji.name, vote: "remove")
-  - reactions       = @page.reactions.where(ip_address: request.ip, emoji: @emoji.name)
+  - reactions       = @page.reactions.where(ip_address: (request.headers["HTTP_CF_CONNECTING_IP"] || request.ip), emoji: @emoji.name)
   - add_remove      = reactions.count == 0 ? "add" : "remove"
   - add_remove_link = reactions.count == 0 ? vote_add : vote_remove
 
