@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require emoji.min
-//= require wdt-emoji-bundle.min
+//= require emoji
+//= require wdt-emoji-bundle
 //= require home
 //= require_tree .
