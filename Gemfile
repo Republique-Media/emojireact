@@ -12,6 +12,7 @@ gem "gemoji"
 gem "unicorn"
 
 gem "sentry-raven"
+gem "skylight"
 
 group :development, :test do
   gem 'byebug', platform: :mri
