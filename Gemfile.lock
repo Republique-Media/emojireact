@@ -130,8 +130,6 @@ GEM
       tilt (>= 1.1, < 3)
     sentry-raven (2.5.3)
       faraday (>= 0.7.6, < 1.0)
-    skylight (1.3.1)
-      activesupport (>= 3.0.0)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -177,7 +175,6 @@ DEPENDENCIES
   rails (= 5.0.0.1)
   sass-rails
   sentry-raven
-  skylight
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
@@ -185,4 +182,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
