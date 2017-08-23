@@ -4,12 +4,11 @@
 
 $(document).ready ->
   wdtEmojiBundle.defaults.emojiSheets =
-    'apple': 'https://d2ibghu3vsr5hn.cloudfront.net/wdt-emoji-bundle/sheet_apple_64_indexed_128.png'
-    'google': 'https://d2ibghu3vsr5hn.cloudfront.net/wdt-emoji-bundle/sheet_google_64_indexed_128.png'
-    'twitter': 'https://d2ibghu3vsr5hn.cloudfront.net/wdt-emoji-bundle/sheet_twitter_64_indexed_128.png'
-    'emojione': 'https://d2ibghu3vsr5hn.cloudfront.net/wdt-emoji-bundle/sheet_emojione_64_indexed_128.png'
-    'facebook': 'https://d2ibghu3vsr5hn.cloudfront.net/wdt-emoji-bundle/sheet_facebook_64_indexed_128.png'
-    'messenger': 'https://d2ibghu3vsr5hn.cloudfront.net/wdt-emoji-bundle/sheet_messenger_64_indexed_128.png'
+    'apple': 'https://cdnjs.cloudflare.com/ajax/libs/wdt-emoji-bundle/0.2.1/sheets/sheet_apple_64_indexed_128.png'
+    'google': 'https://cdnjs.cloudflare.com/ajax/libs/wdt-emoji-bundle/0.2.1/sheets/sheet_google_64_indexed_128.png'
+    'twitter': 'https://cdnjs.cloudflare.com/ajax/libs/wdt-emoji-bundle/0.2.1/sheets/sheet_twitter_64_indexed_128.png'
+    'emojione': 'https://cdnjs.cloudflare.com/ajax/libs/wdt-emoji-bundle/0.2.1/sheets/sheet_emojione_64_indexed_128.png'
+    'facebook': 'https://cdnjs.cloudflare.com/ajax/libs/wdt-emoji-bundle/0.2.1/sheets/sheet_facebook_64_indexed_128.png'
+    'messenger': 'https://cdnjs.cloudflare.com/ajax/libs/wdt-emoji-bundle/0.2.1/sheets/sheet_messenger_64_indexed_128.png'
   wdtEmojiBundle.init '.wdt-emoji-bundle-enabled'
-  wdtEmojiBundle.defaults.type = 'apple'
-
+  wdtEmojiBundle.defaults.type = 'emojione'
