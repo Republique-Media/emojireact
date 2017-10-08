@@ -13,8 +13,9 @@ class EmbedController < ApplicationController
       # single emojis
       if params[:emoji]
         @emoji = Emoji.find_by_alias(params[:emoji])
-        @reactions = @page.reactions.where(ip_address: (request.headers["HTTP_CF_CONNECTING_IP"] || request.ip), emoji: @emoji.name)
         begin
+          @reactions = @page.reactions.where(ip_address: (request.headers["HTTP_CF_CONNECTING_IP"] || request.ip), emoji: @emoji.name)
+
           if params[:vote] == "add"
             unless @reactions.present?
               @page.reactions.create emoji: @emoji.name, ip_address: (request.headers["HTTP_CF_CONNECTING_IP"] || request.ip), referrer: request.referrer

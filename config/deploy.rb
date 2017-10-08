@@ -11,7 +11,7 @@ require 'securerandom'
 set :application_name, 'emojireact'
 set :domain, 'server.voupe.com'
 set :deploy_to, '/opt/emojireact'
-set :repository, 'git@git.voupe.com:voupe/emoji-react.git'
+set :repository, 'git@gitlab.voupe.com:voupe/emoji-react.git'
 set :branch, 'master'
 
 # Optional settings:
