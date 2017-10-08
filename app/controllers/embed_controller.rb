@@ -3,9 +3,9 @@ class EmbedController < ApplicationController
   after_action :allow_iframe
 
   def index
-    @page = Page.find_by(url: params[:url])
+    @page = Page.includes(:reactions).find_by(url: params[:url])
     unless @page
-      @page = Page.create(url: params[:url])
+      @page = Page.includes(:reactions).create(url: params[:url])
     end
 
     if @page
