@@ -28,13 +28,13 @@ class EmbedController < ApplicationController
           end
         else
 
-          expires_in(7.days, public: true)
+          # expires_in(7.days, public: true)
+
+          fresh_when(last_modified: @page.updated_at, public: true)
 
         end
 
-        # if @page.reactions.present?
-        #   fresh_when(last_modified: @page.reactions.last.updated_at, public: true)
-        # end
+
 
         render layout: "iframe"
       else
