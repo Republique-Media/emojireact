@@ -31,7 +31,7 @@ class EmbedController < ApplicationController
         # fresh_when(last_modified: @page.updated_at, public: true)
 
         if stale?(@page)
-          render layout: "iframe"
+          render layout: "iframe" and return
         end
       else
         render nothing: true
