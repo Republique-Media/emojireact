@@ -22,14 +22,14 @@ class EmbedController < ApplicationController
             elsif params[:vote] == "remove"
               @page.reactions.where(emoji: @emoji.name, ip_address: (request.headers["HTTP_CF_CONNECTING_IP"] || request.ip)).first.try(:destroy)
               redirect_back(fallback_location: embed_path(url: @page.url, emoji: @emoji.name)) and return
-            else
-
-              expires_in(7.days, public: true)
-
             end
           rescue # if an emoji doesn't exist
             render nothing: true
           end
+        else
+
+          expires_in(7.days, public: true)
+
         end
 
         # if @page.reactions.present?
