@@ -26,12 +26,14 @@ class EmbedController < ApplicationController
           rescue # if an emoji doesn't exist
             render nothing: true
           end
-        end
+        else
 
         # fresh_when(last_modified: @page.updated_at, public: true)
 
-        if stale?(@page)
-          render layout: "iframe" and return
+          if stale?(@page)
+            render layout: "iframe"
+          end
+
         end
       else
         render nothing: true
