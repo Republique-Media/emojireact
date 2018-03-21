@@ -28,7 +28,9 @@ class EmbedController < ApplicationController
           end
         end
 
-        fresh_when(etag: @page, last_modified: @page.updated_at, public: true)
+        if @page.reactions.present?
+          fresh_when(etag: @page.reactions.last, last_modified: @page.reactions.last.updated_at, public: true)
+        end
 
         render layout: "iframe"
       else
