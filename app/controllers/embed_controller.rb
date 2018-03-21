@@ -26,7 +26,7 @@ class EmbedController < ApplicationController
           rescue # if an emoji doesn't exist
             render nothing: true
           end
-        else
+        end
 
         # if @page.reactions.present?
         #   fresh_when(last_modified: @page.reactions.last.updated_at, public: true)
