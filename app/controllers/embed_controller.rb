@@ -28,17 +28,11 @@ class EmbedController < ApplicationController
           end
         else
 
-          if stale?(last_modified: @page.updated_at.utc, etag: @page.cache_key)
-            render layout: "iframe"
-          end
-
-        end
-
         # if @page.reactions.present?
         #   fresh_when(last_modified: @page.reactions.last.updated_at, public: true)
         # end
 
-        # render layout: "iframe"
+        render layout: "iframe"
       else
         render nothing: true
       end
