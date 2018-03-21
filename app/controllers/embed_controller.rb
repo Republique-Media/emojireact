@@ -24,7 +24,7 @@ class EmbedController < ApplicationController
               redirect_back(fallback_location: embed_path(url: @page.url, emoji: @emoji.name)) and return
             else
 
-              expires_in(7.days)
+              expires_in(7.days, public: true)
 
             end
           rescue # if an emoji doesn't exist
