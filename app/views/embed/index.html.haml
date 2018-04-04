@@ -1,12 +1,11 @@
-- cache @page do
-  - if params[:emojis]
-    - emojis = parse_emojis(params[:emojis])
+- if params[:emojis]
+  - emojis = parse_emojis(params[:emojis])
 
-    - if emojis.include?(",")
-      - emojis.split(",").each do |emoji|
-        = render "embed/display", emoji: emoji
-    - else
-      = render "embed/display", emoji: emojis
+  - if emojis.include?(",")
+    - emojis.split(",").each do |emoji|
+      = render "embed/display", emoji: emoji
+  - else
+    = render "embed/display", emoji: emojis
 
-  - elsif params[:emoji]
-    = render "embed/link"
+- elsif params[:emoji]
+  = render "embed/link"
