@@ -5,4 +5,4 @@ require_relative 'config/application'
 
 Rails.application.load_tasks
 
-load 'tasks/emoji.rake'
+# load 'tasks/emoji.rake'
